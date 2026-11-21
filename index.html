@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora · Casa de Sabores</title>
+  <meta name="description" content="Aurora, Casa de Sabores: bolones, colonche de camarón, churrasco, café de especialidad, cócteles y postres recién horneados. Hoy es un buen día para celebrar.">
+  <meta name="theme-color" content="#7A1C24">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Jost:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#carta">Saltar a la carta</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#inicio" class="brand" aria-label="Aurora, Casa de Sabores, inicio">
+        <img src="assets/wordmark-vino.png" alt="Aurora" width="160" height="56">
+      </a>
+      <nav id="menu" class="nav" aria-label="Principal">
+        <a href="#carta">La carta</a>
+        <a href="#casa">La casa</a>
+        <a href="#visita">Visítanos</a>
+        <a href="#visita" class="btn btn-small">Reservar mesa</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: el amanecer -->
+    <section class="hero" id="inicio">
+      <svg class="thread thread-hero" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 670 C 160 640, 300 690, 430 660 S 600 560, 660 610 C 700 650, 640 690, 610 660 C 570 620, 680 580, 760 600 C 900 640, 980 420, 1160 330 S 1380 250, 1440 180"/>
+      </svg>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="script">¡Hoy es un buen día para celebrar!</p>
+          <h1>Sabores de la costa, café de la casa y una mesa para quedarse.</h1>
+          <p class="lead">Bolones, colonche de camarón, churrasco y postres recién horneados, servidos en una casa pintada a mano.</p>
+          <div class="hero-actions">
+            <a href="#carta" class="btn">Ver la carta</a>
+            <a href="#visita" class="link">Cómo llegar</a>
+          </div>
+        </div>
+
+        <figure class="hero-arch">
+          <svg class="rays" viewBox="0 0 400 140" aria-hidden="true">
+            <line x1="200" y1="96" x2="200" y2="20"/>
+            <line x1="150" y1="104" x2="118" y2="40"/>
+            <line x1="250" y1="104" x2="282" y2="40"/>
+            <line x1="108" y1="124" x2="52" y2="88"/>
+            <line x1="292" y1="124" x2="348" y2="88"/>
+          </svg>
+          <div class="arch-frame">
+            <img src="assets/img/salon.jpg" alt="Salón de Aurora con la barra vino, el letrero iluminado y el mural de montañas al fondo" width="1600" height="900" fetchpriority="high">
+          </div>
+          <figcaption>El salón, con la barra al fondo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="carta" id="carta" aria-labelledby="carta-title">
+      <div class="wrap carta-grid">
+        <div class="carta-side">
+        <div class="carta-head">
+          <h2 id="carta-title">La carta</h2>
+          <p>Platos fuertes desde $3,50 y bebidas desde $1. Precios en dólares.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Secciones de la carta" aria-orientation="vertical">
+          <button role="tab" id="t-placeres" aria-controls="p-placeres" aria-selected="true">Pequeños placeres</button>
+          <button role="tab" id="t-fuertes" aria-controls="p-fuertes" aria-selected="false" tabindex="-1">Platos fuertes</button>
+          <button role="tab" id="t-panes" aria-controls="p-panes" aria-selected="false" tabindex="-1">Entre panes</button>
+          <button role="tab" id="t-cafe" aria-controls="p-cafe" aria-selected="false" tabindex="-1">Café y calientes</button>
+          <button role="tab" id="t-frias" aria-controls="p-frias" aria-selected="false" tabindex="-1">Frías</button>
+          <button role="tab" id="t-cocteles" aria-controls="p-cocteles" aria-selected="false" tabindex="-1">Cócteles</button>
+          <button role="tab" id="t-postres" aria-controls="p-postres" aria-selected="false" tabindex="-1">Postres</button>
+        </div>
+        </div>
+
+        <div class="panels">
+          <div class="panel" role="tabpanel" id="p-placeres" aria-labelledby="t-placeres" tabindex="0">
+            <p class="panel-intro">Para abrir la mesa, a base de verde y maduro.</p>
+            <ul class="dishes">
+              <li><span class="dish">Empanadas de verde <small>Tres, rellenas de queso, pollo y longaniza</small></span><span class="price">2,00</span></li>
+              <li><span class="dish">Maduros con queso fundido</span><span class="price">2,00</span></li>
+              <li><span class="dish">Tortillas de verde con queso</span><span class="price">1,50</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-fuertes" aria-labelledby="t-fuertes" tabindex="0" hidden>
+            <article class="special">
+              <p class="special-tag">El de la casa</p>
+              <h3>El Especial de Aurora</h3>
+              <p>Pescado y camarón en salsa cremosa, con patacones rotos.</p>
+              <span class="price">7,00</span>
+            </article>
+            <ul class="dishes">
+              <li><span class="dish">Colonche de camarón <small>Camarón, maní y base de cocolón, con patacones rotos</small></span><span class="price">7,00</span></li>
+              <li><span class="dish">Churrasco de la casa <small>Lomo de res con vegetales, arroz, papas, aguacate y huevos</small></span><span class="price">7,00</span></li>
+              <li><span class="dish">Luna negra <small>Morcilla rellena de arroz, con arroz o patacones</small></span><span class="price">5,00</span></li>
+              <li><span class="dish">Luna roja <small>Longaniza, con arroz o patacones</small></span><span class="price">5,00</span></li>
+              <li><span class="dish">Bolón dorado <small>De plátano o maduro, con chicharrón, queso, maní o mixto, y huevo</small></span><span class="price">3,50</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-panes" aria-labelledby="t-panes" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish">Sanduche Birria Lovers <small>Pan hogaza, mix de quesos, birria de res, consomé y guacamole</small></span><span class="price">7,00</span></li>
+              <li><span class="dish">Tentación francesa <small>Pan brioche, frutos rojos, crema y miel</small></span><span class="price">5,00</span></li>
+              <li><span class="dish">Alla Napoli <small>Focaccia tostada, salsa pomodoro, mozzarella, huevos y albahaca</small></span><span class="price">5,00</span></li>
+              <li><span class="dish">Tostada de Aurora <small>Focaccia, huevos, tocino y aguacate</small></span><span class="price">3,50</span></li>
+              <li><span class="dish">Sanduche Kids <small>Pan blanco o integral, mozzarella y jamón</small></span><span class="price">2,00</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-cafe" aria-labelledby="t-cafe" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish">Mocaccino</span><span class="price">4,00</span></li>
+              <li><span class="dish">Capuccino</span><span class="price">3,50</span></li>
+              <li><span class="dish">Chocolate caliente</span><span class="price">2,50</span></li>
+              <li><span class="dish">Café americano</span><span class="price">2,00</span></li>
+              <li><span class="dish">Té</span><span class="price">1,50</span></li>
+              <li><span class="dish">Café instantáneo</span><span class="price">1,00</span></li>
+            </ul>
+            <p class="note">Agrega jarabe de avellana, caramelo o vainilla por $1.</p>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-frias" aria-labelledby="t-frias" tabindex="0" hidden>
+            <ul class="dishes dishes-cols">
+              <li><span class="dish">Iced Aurora latte</span><span class="price">5,00</span></li>
+              <li><span class="dish">Iced Moka latte</span><span class="price">5,00</span></li>
+              <li><span class="dish">Iced Caramel latte</span><span class="price">5,00</span></li>
+              <li><span class="dish">Iced latte</span><span class="price">3,50</span></li>
+              <li><span class="dish">Limonada de coco</span><span class="price">3,00</span></li>
+              <li><span class="dish">Limonada de fresa</span><span class="price">3,00</span></li>
+              <li><span class="dish">Infusión fría de jamaica</span><span class="price">2,50</span></li>
+              <li><span class="dish">Jugo de piña</span><span class="price">2,00</span></li>
+              <li><span class="dish">Jugo de tomate de árbol</span><span class="price">2,00</span></li>
+              <li><span class="dish">Jugo de maracuyá</span><span class="price">2,00</span></li>
+              <li><span class="dish">Jugo de guanábana</span><span class="price">2,00</span></li>
+              <li><span class="dish">Jugo de mora</span><span class="price">2,00</span></li>
+            </ul>
+            <p class="note">Todos los jugos son naturales.</p>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-cocteles" aria-labelledby="t-cocteles" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish">Piña colada <small>Ron, piña y coco</small></span><span class="price">6,00</span></li>
+              <li><span class="dish">Paloma <small>Brandy, limón y soda de toronja</small></span><span class="price">5,00</span></li>
+              <li><span class="dish">Michelada de maracuyá <small>Cerveza Corona, maracuyá, tajín y chamoy</small></span><span class="price">4,50</span></li>
+              <li><span class="dish">Mojito <small>Ron blanco, limón, hierbabuena y soda</small></span><span class="price">4,50</span></li>
+              <li><span class="dish">Moscow mule <small>Vodka, jengibre y agua tónica</small></span><span class="price">4,50</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-postres" aria-labelledby="t-postres" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish">Aurora Cookie Dream <small>Helado de ron pasas con galleta recién horneada</small></span><span class="price">3,50</span></li>
+              <li><span class="dish">Mojada de chocolate</span><span class="price">3,00</span></li>
+              <li><span class="dish">Cake de zanahoria</span><span class="price">2,50</span></li>
+              <li><span class="dish">Afogato Aurora</span><span class="price">2,50</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA CASA -->
+    <section class="casa" id="casa" aria-labelledby="casa-title">
+      <div class="wrap casa-grid">
+        <div class="casa-copy">
+          <h2 id="casa-title">Una casa pintada a mano</h2>
+          <p>Las montañas con el sol saliendo, el arco de luz con flores y el espejo que brilla sobre la pared vino: cada rincón de Aurora se hizo para que te sientas en casa y te quieras tomar la foto.</p>
+          <ul class="casa-list">
+            <li><strong>El arco</strong> es el lugar de las fotos de cumpleaños y reuniones.</li>
+            <li><strong>La barra</strong> es donde se prepara tu café, frente a ti.</li>
+            <li><strong>El mural</strong> cuenta de dónde viene el nombre: la aurora, el primer sol del día.</li>
+          </ul>
+        </div>
+        <div class="collage">
+          <figure class="c-blob c-espejo"><img src="assets/img/espejo.jpg" alt="Espejo de forma orgánica iluminado en naranja sobre la pared vino" loading="lazy" width="1200" height="1600"></figure>
+          <figure class="c-blob c-arco"><img src="assets/img/arco.jpg" alt="Arco iluminado con flores y el letrero ¡Hoy es un buen día para celebrar!" loading="lazy" width="1600" height="1200"></figure>
+          <figure class="c-blob c-mural"><img src="assets/img/mural.jpg" alt="Mural con el logo de Aurora, montañas y el sol" loading="lazy" width="1600" height="1200"></figure>
+          <figure class="c-blob c-barra"><img src="assets/img/barra.jpg" alt="Letrero de Aurora sobre la pared vino de la barra" loading="lazy" width="1600" height="1200"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERSÍCULO -->
+    <section class="verso" aria-label="Nuestra frase">
+      <svg class="thread thread-verso" viewBox="0 0 1400 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 90 C 200 30, 330 140, 470 80 S 640 -10, 700 60 C 760 130, 660 170, 640 120 C 620 70, 760 40, 900 90 S 1200 220, 1440 120"/>
+      </svg>
+      <div class="wrap verso-inner">
+        <blockquote>
+          <p>Todo lo que hagan, <span class="script-line">háganlo de corazón,</span> como para el Señor y no para los hombres.</p>
+          <footer>Colosenses 3:23</footer>
+        </blockquote>
+        <p class="verso-note">Está pintado en nuestra pared, y es la forma en que cocinamos.</p>
+      </div>
+    </section>
+
+    <!-- VISITA -->
+    <section class="visita" id="visita" aria-labelledby="visita-title">
+      <div class="wrap visita-grid">
+        <figure class="fachada">
+          <img src="assets/img/fachada.jpg" alt="Fachada de Aurora de noche, con el letrero iluminado y el salón a la vista" loading="lazy" width="1600" height="1200">
+        </figure>
+        <div class="visita-copy">
+          <h2 id="visita-title">Te esperamos</h2>
+          <p>Ven a desayunar, a almorzar o a celebrar algo. Si vienes en grupo, escríbenos y te guardamos la mesa.</p>
+          <dl class="datos">
+            <div><dt>Dirección</dt><dd data-pendiente>Por confirmar</dd></div>
+            <div><dt>Horario</dt><dd data-pendiente>Por confirmar</dd></div>
+            <div><dt>Pagos</dt><dd data-pendiente>Por confirmar</dd></div>
+          </dl>
+          <div class="hero-actions">
+            <a href="#" class="btn" data-pendiente="whatsapp">Reservar por WhatsApp</a>
+            <a href="#" class="link" data-pendiente="instagram">Síguenos en Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img src="assets/logo-crema.png" alt="Aurora, Casa de Sabores" width="220" height="90" loading="lazy">
+      <nav aria-label="Pie de página">
+        <a href="#carta">La carta</a>
+        <a href="#casa">La casa</a>
+        <a href="#visita">Visítanos</a>
+      </nav>
+      <p>© <span id="year">2026</span> Aurora, Casa de Sabores</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
