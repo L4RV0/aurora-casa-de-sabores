@@ -1,0 +1,8 @@
+# Archivos del proyecto que NO deben publicarse en la página
+.git
+.gitignore
+.assetsignore
+.claude
+node_modules
+amplify.yml
+wrangler.jsonc

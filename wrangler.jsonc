@@ -1,0 +1,9 @@
+// Configuración para publicar la página en Cloudflare Workers (sitio estático).
+// No hay código de servidor: Cloudflare solo sirve los archivos de esta carpeta.
+{
+	"name": "aurora-casa-de-sabores",
+	"compatibility_date": "2026-11-21",
+	"assets": {
+		"directory": "./"
+	}
+}
