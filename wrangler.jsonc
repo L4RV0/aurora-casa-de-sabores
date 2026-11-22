@@ -3,6 +3,11 @@
 {
 	"name": "aurora-casa-de-sabores",
 	"compatibility_date": "2026-11-21",
+	// Dominio propio: Cloudflare crea los registros DNS y el certificado HTTPS solo
+	"routes": [
+		{ "pattern": "auroracasadesabores.com", "custom_domain": true },
+		{ "pattern": "www.auroracasadesabores.com", "custom_domain": true }
+	],
 	"assets": {
 		"directory": "./"
 	}
