@@ -293,6 +293,15 @@ p { margin: 0; }
 .datos dt { color: var(--suave); }
 .datos dd { margin: 0; font-weight: 500; color: var(--tinta); }
 
+/* Sobre nosotros: como la hoja de marca, con el sol del logo de fondo */
+.sobre { position: relative; overflow: hidden; background: #FFF6E6; padding: clamp(84px, 10vw, 140px) 0; border-top: 1px solid var(--linea); }
+.sobre-sol { position: absolute; right: -6%; top: 50%; width: min(70vw, 640px); transform: translateY(-46%); stroke: #EFE2D2; pointer-events: none; }
+.sobre-inner { position: relative; max-width: 820px; text-align: left; }
+.sobre h2 { margin-bottom: 30px; }
+.sobre-logo { width: min(300px, 70%); height: auto; margin: 0 0 34px; }
+.sobre p { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.65; color: var(--vino); max-width: 62ch; }
+.sobre p + p { margin-top: 22px; }
+
 /* Footer */
 .site-footer { background: var(--vino); color: var(--crema); padding: 56px 0 40px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
