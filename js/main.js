@@ -48,3 +48,23 @@ tabs.forEach((tab, i) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Ver en grande las fotos de los platos
+const modal = document.querySelector('.foto-modal');
+if (modal && typeof modal.showModal === 'function') {
+  const modalImg = modal.querySelector('img');
+  const modalNombre = modal.querySelector('.foto-nombre');
+
+  document.querySelectorAll('.dish-foto').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      modalImg.src = btn.dataset.foto;
+      modalImg.alt = btn.dataset.nombre;
+      modalNombre.textContent = btn.dataset.nombre;
+      modal.showModal();
+    })
+  );
+
+  modal.querySelector('.foto-cerrar').addEventListener('click', () => modal.close());
+  // Cerrar al tocar fuera de la foto
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
+}

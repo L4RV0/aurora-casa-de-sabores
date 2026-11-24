@@ -78,7 +78,7 @@
           <button role="tab" id="t-fuertes" aria-controls="p-fuertes" aria-selected="false" tabindex="-1">Platos fuertes</button>
           <button role="tab" id="t-panes" aria-controls="p-panes" aria-selected="false" tabindex="-1">Entre panes</button>
           <button role="tab" id="t-cafe" aria-controls="p-cafe" aria-selected="false" tabindex="-1">Café y bebidas</button>
-          <button role="tab" id="t-frias" aria-controls="p-frias" aria-selected="false" tabindex="-1">Frías</button>
+          <button role="tab" id="t-frias" aria-controls="p-frias" aria-selected="false" tabindex="-1">Bebidas Frías</button>
           <button role="tab" id="t-cocteles" aria-controls="p-cocteles" aria-selected="false" tabindex="-1">Cócteles</button>
           <button role="tab" id="t-postres" aria-controls="p-postres" aria-selected="false" tabindex="-1">Postres</button>
         </div>
@@ -117,20 +117,16 @@
           <div class="panel" role="tabpanel" id="p-panes" aria-labelledby="t-panes" tabindex="0" hidden>
             <ul class="dishes">
               <li><span class="dish">Sanduche Birria Lovers <small>Pan hogaza, mix de quesos, birria de res, consomé y guacamole</small></span><span class="price">7,00</span></li>
-              <li><span class="dish">Tentación francesa <small>Pan brioche, frutos rojos, mermelada</small></span><span class="price">5,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/tentacion-francesa.jpg" data-nombre="Tentación francesa" aria-label="Ver foto de Tentación francesa"><img src="assets/img/menu/tentacion-francesa.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Tentación francesa <small>Pan brioche, frutos rojos, mermelada</small></span><span class="price">5,00</span></li>
               <li><span class="dish">Alla Napoli <small>Focaccia tostada, salsa pomodoro, mozzarella, huevos y albahaca</small></span><span class="price">5,00</span></li>
               <li><span class="dish">Tostada de Aurora <small>Focaccia, huevos, tocino y aguacate</small></span><span class="price">3,50</span></li>
               <li><span class="dish">Sanduche Kids <small>Pan blanco o integral, mozzarella y jamón</small></span><span class="price">2,00</span></li>
             </ul>
-            <figure class="plato-foto">
-              <img src="assets/img/plato-tentacion.jpg" alt="Tentación francesa: pan brioche con salsa de frutos rojos, fresa, arándanos, banano y azúcar glas" width="1200" height="1200" loading="lazy">
-              <figcaption><strong>Tentación francesa</strong>Presentación de ejemplo: brioche dorado con frutos rojos, banano y azúcar glas.</figcaption>
-            </figure>
           </div>
 
           <div class="panel" role="tabpanel" id="p-cafe" aria-labelledby="t-cafe" tabindex="0" hidden>
             <ul class="dishes">
-              <li><span class="dish">Mocaccino</span><span class="price">4,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/mocaccino.jpg" data-nombre="Mocaccino" aria-label="Ver foto de Mocaccino"><img src="assets/img/menu/mocaccino.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Mocaccino</span><span class="price">4,00</span></li>
               <li><span class="dish">Capuccino</span><span class="price">3,50</span></li>
               <li><span class="dish">Chocolate caliente</span><span class="price">2,50</span></li>
               <li><span class="dish">Café americano</span><span class="price">2,00</span></li>
@@ -143,12 +139,12 @@
           <div class="panel" role="tabpanel" id="p-frias" aria-labelledby="t-frias" tabindex="0" hidden>
             <ul class="dishes dishes-cols">
               <li><span class="dish">Iced Aurora latte</span><span class="price">5,00</span></li>
-              <li><span class="dish">Iced Moka latte</span><span class="price">5,00</span></li>
-              <li><span class="dish">Iced Caramel latte</span><span class="price">5,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/iced-moka-latte.jpg" data-nombre="Iced Moka latte" aria-label="Ver foto de Iced Moka latte"><img src="assets/img/menu/iced-moka-latte.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Iced Moka latte</span><span class="price">5,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/iced-caramel-latte.jpg" data-nombre="Iced Caramel latte" aria-label="Ver foto de Iced Caramel latte"><img src="assets/img/menu/iced-caramel-latte.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Iced Caramel latte</span><span class="price">5,00</span></li>
               <li><span class="dish">Iced latte</span><span class="price">3,50</span></li>
               <li><span class="dish">Limonada de coco</span><span class="price">3,00</span></li>
               <li><span class="dish">Limonada de fresa</span><span class="price">3,00</span></li>
-              <li><span class="dish">Infusión fría de jamaica</span><span class="price">2,50</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/infusion-jamaica.jpg" data-nombre="Infusión fría de jamaica" aria-label="Ver foto de Infusión fría de jamaica"><img src="assets/img/menu/infusion-jamaica.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Infusión fría de jamaica</span><span class="price">2,50</span></li>
               <li><span class="dish">Jugo de piña</span><span class="price">2,00</span></li>
               <li><span class="dish">Jugo de tomate de árbol</span><span class="price">2,00</span></li>
               <li><span class="dish">Jugo de maracuyá</span><span class="price">2,00</span></li>
@@ -160,10 +156,10 @@
 
           <div class="panel" role="tabpanel" id="p-cocteles" aria-labelledby="t-cocteles" tabindex="0" hidden>
             <ul class="dishes">
-              <li><span class="dish">Piña colada <small>Ron, piña y coco</small></span><span class="price">6,00</span></li>
-              <li><span class="dish">Paloma <small>Brandy, limón y soda de toronja</small></span><span class="price">5,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/pina-colada.jpg" data-nombre="Piña colada" aria-label="Ver foto de Piña colada"><img src="assets/img/menu/pina-colada.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Piña colada <small>Ron, piña y coco</small></span><span class="price">6,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/paloma.jpg" data-nombre="Paloma" aria-label="Ver foto de Paloma"><img src="assets/img/menu/paloma.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Paloma <small>Brandy, limón y soda de toronja</small></span><span class="price">5,00</span></li>
               <li><span class="dish">Michelada de maracuyá <small>Cerveza Corona, maracuyá, tajín y chamoy</small></span><span class="price">4,50</span></li>
-              <li><span class="dish">Mojito <small>Ron blanco, limón, hierbabuena y soda</small></span><span class="price">4,50</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/mojito.jpg" data-nombre="Mojito" aria-label="Ver foto de Mojito"><img src="assets/img/menu/mojito.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Mojito <small>Ron blanco, limón, hierbabuena y soda</small></span><span class="price">4,50</span></li>
               <li><span class="dish">Moscow mule <small>Vodka, jengibre y agua tónica</small></span><span class="price">4,50</span></li>
             </ul>
           </div>
@@ -171,8 +167,8 @@
           <div class="panel" role="tabpanel" id="p-postres" aria-labelledby="t-postres" tabindex="0" hidden>
             <ul class="dishes">
               <li><span class="dish">Aurora Cookie Dream <small>Helado de ron pasas con galleta recién horneada</small></span><span class="price">3,50</span></li>
-              <li><span class="dish">Mojada de chocolate</span><span class="price">3,00</span></li>
-              <li><span class="dish">Cake de zanahoria</span><span class="price">2,50</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/mojada-chocolate.jpg" data-nombre="Mojada de chocolate" aria-label="Ver foto de Mojada de chocolate"><img src="assets/img/menu/mojada-chocolate.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Mojada de chocolate</span><span class="price">3,00</span></li>
+              <li class="con-foto"><button class="dish-foto" type="button" data-foto="assets/img/menu/cake-zanahoria.jpg" data-nombre="Cake de zanahoria" aria-label="Ver foto de Cake de zanahoria"><img src="assets/img/menu/cake-zanahoria.jpg" alt="" width="600" height="800" loading="lazy"></button><span class="dish">Cake de zanahoria</span><span class="price">2,50</span></li>
               <li><span class="dish">Afogato Aurora</span><span class="price">2,50</span></li>
             </ul>
           </div>
@@ -258,6 +254,12 @@
       <p>© <span id="year">2026</span> Aurora, Casa de Sabores</p>
     </div>
   </footer>
+
+  <dialog class="foto-modal" aria-label="Foto del plato">
+    <button class="foto-cerrar" type="button" aria-label="Cerrar foto">&times;</button>
+    <img src="" alt="" width="600" height="800">
+    <p class="foto-nombre"></p>
+  </dialog>
 
   <script src="js/main.js"></script>
 </body>
