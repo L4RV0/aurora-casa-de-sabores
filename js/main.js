@@ -69,6 +69,28 @@ if (modal && typeof modal.showModal === 'function') {
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
 }
 
+// Videos sin sonido: solo se reproducen mientras están a la vista
+// (y no se mueven si la persona pidió reducir el movimiento)
+const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.video-auto').forEach((video) => {
+  video.muted = true;
+  if (reducirMovimiento) { video.removeAttribute('autoplay'); video.pause(); return; }
+  if (!('IntersectionObserver' in window)) { video.play().catch(() => {}); return; }
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) video.play().catch(() => {});
+    else video.pause();
+  }, { threshold: 0.25 }).observe(video);
+});
+
+// Reseña en video: botón de play grande sobre la portada
+const resena = document.querySelector('.resena-video');
+if (resena) {
+  const video = resena.querySelector('video');
+  resena.querySelector('.resena-play').addEventListener('click', () => video.play());
+  video.addEventListener('play', () => resena.classList.add('reproduciendo'));
+  video.addEventListener('pause', () => { if (video.currentTime === 0) resena.classList.remove('reproduciendo'); });
+}
+
 // Logo del encabezado: oculto mientras se ve el logo grande del inicio
 const heroLogo = document.querySelector('.hero-logo');
 if (heroLogo && 'IntersectionObserver' in window) {

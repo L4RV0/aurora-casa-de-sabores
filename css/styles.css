@@ -123,6 +123,7 @@ p { margin: 0; }
     0 30px 60px -30px rgba(62, 20, 24, .45);
 }
 .arch-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+.arch-frame video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .hero-arch figcaption { margin-top: 14px; text-align: center; font-size: 15px; color: var(--suave); }
 
 /* Amanecer: la única animación de entrada */
@@ -224,6 +225,8 @@ p { margin: 0; }
 }
 .plato-foto img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; }
 .plato-foto figcaption { color: var(--suave); font-size: 16px; max-width: 34ch; }
+.bebida-video { grid-template-columns: minmax(160px, 240px) 1fr; }
+.bebida-video video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 55%; border-radius: 16px; background: var(--crema); }
 .plato-foto strong {
   display: block; margin-bottom: 6px;
   font-family: var(--display); font-variation-settings: "SOFT" 100; font-weight: 500; font-size: 24px; color: var(--vino);
@@ -310,6 +313,25 @@ p { margin: 0; }
 .sobre p { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.65; color: var(--vino); max-width: 62ch; }
 .sobre p + p { margin-top: 22px; }
 
+/* Reseña en video */
+.resena { background: var(--vino); color: var(--crema); padding: clamp(80px, 10vw, 130px) 0; overflow-x: clip; }
+.resena-grid { display: grid; grid-template-columns: 1fr minmax(240px, 320px); gap: clamp(36px, 7vw, 96px); align-items: center; }
+.resena-copy .script { color: var(--mostaza); }
+.resena h2 { color: var(--crema); margin-bottom: 22px; }
+.resena-copy p:not(.script) { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.6; max-width: 40ch; color: #F6DCCB; }
+.resena-video { position: relative; border-radius: 28px; overflow: hidden; background: var(--ciruela); box-shadow: 0 0 0 1px rgba(252,238,223,.25), 0 30px 60px -24px rgba(0,0,0,.55); }
+.resena-video video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
+.resena-play {
+  position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border: 0; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  background: var(--crema); color: var(--vino); box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .2s ease;
+}
+.resena-play:hover { transform: scale(1.06); }
+.resena-play:focus-visible { outline: 3px solid var(--mostaza); outline-offset: 4px; }
+.resena-play svg { width: 34px; height: 34px; fill: currentColor; margin-left: 4px; }
+.resena-video.reproduciendo .resena-play { display: none; }
+
 /* Footer */
 .site-footer { background: var(--vino); color: var(--crema); padding: 56px 0 40px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
@@ -346,6 +368,9 @@ p { margin: 0; }
   .tabs button::before { display: none; }
   .tabs button[aria-selected="true"] { background: var(--vino); border-color: var(--vino); color: var(--crema); }
   .panel { min-height: 0; }
+
+  .resena-grid { grid-template-columns: 1fr; }
+  .resena-video { max-width: 360px; width: 100%; margin-inline: auto; }
 }
 
 @media (max-width: 760px) {
@@ -376,6 +401,8 @@ p { margin: 0; }
   .special .price { grid-column: 1; grid-row: auto; }
   .plato-foto { grid-template-columns: 1fr; padding: 14px 14px 20px; gap: 16px; }
   .plato-foto figcaption { padding-inline: 6px; }
+  .bebida-video { grid-template-columns: 1fr; }
+  .bebida-video video { max-width: 300px; }
   .footer-inner nav { flex-wrap: wrap; gap: 14px 22px; }
 
   .collage { grid-template-columns: repeat(2, 1fr); grid-template-rows: 220px 150px 150px; gap: 10px; }

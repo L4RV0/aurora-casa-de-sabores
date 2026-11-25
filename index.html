@@ -76,9 +76,9 @@
             <line x1="292" y1="124" x2="348" y2="88"/>
           </svg>
           <div class="arch-frame">
-            <img src="assets/img/salon.jpg" alt="Salón de Aurora con la barra vino, el letrero iluminado y el mural de montañas al fondo" width="1600" height="900" fetchpriority="high">
+            <video class="video-auto" src="assets/video/noche-aurora.mp4" poster="assets/video/noche-aurora.jpg" width="540" height="960" autoplay muted loop playsinline preload="auto" aria-label="Video de Aurora de noche: la fachada iluminada, platos de la casa y un brindis con cócteles"></video>
           </div>
-          <figcaption>El salón, con la barra al fondo</figcaption>
+          <figcaption>Una noche en Aurora</figcaption>
         </figure>
       </div>
     </section>
@@ -170,6 +170,10 @@
               <li><span class="dish">Jugo de mora</span><span class="price">2,00</span></li>
             </ul>
             <p class="note">Todos los jugos son naturales.</p>
+            <figure class="plato-foto bebida-video">
+              <video class="video-auto" src="assets/video/iced-latte.mp4" poster="assets/video/iced-latte.jpg" width="540" height="960" muted loop playsinline preload="none" aria-label="Video del Iced latte de Aurora y el equipo brindando con sus bebidas"></video>
+              <figcaption><strong>Recién servido</strong>Nuestros lattes fríos, con el sello de la casa en cada vaso.</figcaption>
+            </figure>
           </div>
 
           <div class="panel" role="tabpanel" id="p-cocteles" aria-labelledby="t-cocteles" tabindex="0" hidden>
@@ -255,6 +259,23 @@
         </ul>
       </div>
     </section>
+    <!-- RESEÑA EN VIDEO -->
+    <section class="resena" id="resena" aria-labelledby="resena-title">
+      <div class="wrap resena-grid">
+        <div class="resena-copy">
+          <p class="script">Así se vive Aurora</p>
+          <h2 id="resena-title">Lo que dicen de nosotros</h2>
+          <p>Una visita de principio a fin: el café, los platos de la costa y los cócteles, contados por quien los probó.</p>
+        </div>
+        <div class="resena-video">
+          <video src="assets/video/resena.mp4" poster="assets/video/resena.jpg" width="540" height="960" controls playsinline preload="none" aria-label="Video reseña de una visita a Aurora"></video>
+          <button class="resena-play" type="button" aria-label="Reproducir la reseña en video">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- SOBRE NOSOTROS -->
     <section class="sobre" id="sobre" aria-labelledby="sobre-title">
       <svg class="sobre-sol" viewBox="0 0 400 400" aria-hidden="true">
