@@ -11,6 +11,24 @@
         ],
         "createdAt": "2026-11-25T21:12:55.280Z",
         "reason": "Claude: foto-modal img src is filled by js/main.js when a dish photo is opened; dialog is hidden until then"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "css/styles.css"
+        ],
+        "createdAt": "2026-11-25T21:42:44.029Z",
+        "reason": "Claude: warm halos on the hero arch and mirror collage imitate the lit arch/neon of the real restaurant; part of the original approved design"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-25T21:44:27.348Z",
+        "reason": "Claude: background is Blanco marfil #FEEFD8 from section 3.0 of the client's brand proposal PDF; brand-mandated, not a default"
       }
     ]
   }

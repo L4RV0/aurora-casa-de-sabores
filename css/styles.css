@@ -1,16 +1,25 @@
 /* Aurora · Casa de Sabores
    Colores tomados del menú impreso y de las paredes del local. */
+/* Combinaciones de color: sección 3.0 de la propuesta de marca.
+   Cada visita elige una (ver el script del <head>). "vino" es la de base. */
 :root {
-  --vino: #7A1C24;        /* logo, barra, títulos, botones */
-  --vino-hondo: #5E141B;  /* hover de botones */
-  --ciruela: #3E1418;     /* mancha oscura del mural: bloques oscuros */
-  --crema: #FCEEDF;       /* fondo del menú impreso */
+  --vino: #761821;        /* color principal: logo, títulos, botones (Concho de vino) */
+  --vino-hondo: #5A1119;  /* hover de botones */
+  --ciruela: #3E1418;     /* bloques oscuros */
+  --crema: #FEEFD8;       /* fondo de la página (Blanco marfil) */
   --papel: #FFF8EF;       /* superficies claras */
   --mostaza: #D6A346;     /* hilo dorado y sol del mural */
   --durazno: #E9A487;     /* figura del mural */
-  --tinta: #4A2427;       /* texto de párrafos, café-vino oscuro */
+  --tinta: #4A2427;       /* texto de párrafos */
   --suave: #7D5A57;       /* texto secundario */
   --linea: #EBCFBF;
+  --sobre-fondo: #FFF6E6;
+  --sobre-sol: #EFE2D2;
+  --logo: var(--vino);           /* logo sobre fondo claro */
+  --logo-oscuro: #FEEFD8;        /* logo sobre bloques de color */
+  --en-oscuro: #FEEFD8;          /* texto sobre bloques de color */
+  --en-oscuro-suave: #F3D9CC;
+  --en-oscuro-brillo: #F2C66E;   /* acentos dorados sobre bloques de color */
 
   --display: "Fraunces", Georgia, serif;
   --texto: "Jost", "Segoe UI", sans-serif;
@@ -19,6 +28,63 @@
   --wrap: 1180px;
   --radio: 14px;
 }
+
+/* Fondo rosa con logo vino */
+:root[data-tema="rosa"] {
+  --ciruela: #5A1119;
+  --crema: #FBDCDA;
+  --papel: #FDEDEB;
+  --mostaza: #C98F45;
+  --suave: #7A4F50;
+  --linea: #EDBDB9;
+  --sobre-fondo: #FDE7E5;
+  --sobre-sol: #F5CBC7;
+  --logo-oscuro: #FBDCDA;
+  --en-oscuro: #FBDCDA;
+  --en-oscuro-suave: #F4CDCA;
+}
+
+/* Fondo marfil con logo madera */
+:root[data-tema="madera"] {
+  --vino: #844B28;
+  --vino-hondo: #6A3B1F;
+  --ciruela: #4A2A17;
+  --mostaza: #C98F3C;
+  --tinta: #4A2E1E;
+  --suave: #7D5F4A;
+  --linea: #EBD3BC;
+  --sobre-fondo: #FFF5E6;
+  --sobre-sol: #F0DFC8;
+  --en-oscuro-suave: #F1DCC6;
+}
+
+/* Verde oliva con logo rosa */
+:root[data-tema="oliva"] {
+  --vino: #5F623D;
+  --vino-hondo: #4B4E30;
+  --ciruela: #3F4128;
+  --mostaza: #C9A24A;
+  --tinta: #3A3B26;
+  --suave: #6C6B52;
+  --linea: #E3DAC2;
+  --sobre-fondo: #FBF3E3;
+  --sobre-sol: #ECE3CC;
+  --logo-oscuro: #FBDCDA;
+  --en-oscuro: #FBDCDA;
+  --en-oscuro-suave: #F1D6CF;
+}
+
+/* Los logos se pintan con el color de la combinación usando su silueta */
+.logo-tinta {
+  background-color: var(--logo);
+  object-position: -99999px 0;
+  -webkit-mask: var(--logo-src) center / contain no-repeat;
+  mask: var(--logo-src) center / contain no-repeat;
+}
+.logo-tinta.en-oscuro { background-color: var(--logo-oscuro); }
+.logo-wordmark { --logo-src: url("../assets/wordmark-vino.png"); }
+.logo-horizontal { --logo-src: url("../assets/logo-horizontal-vino.png"); }
+.logo-principal { --logo-src: url("../assets/logo-vino.png"); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
@@ -50,13 +116,13 @@ p { margin: 0; }
 
 .wrap { width: min(100% - 32px, var(--wrap)); margin-inline: auto; }
 
-.skip { position: absolute; left: -999px; top: 8px; background: var(--vino); color: var(--crema); padding: 8px 14px; z-index: 100; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--vino); color: var(--en-oscuro); padding: 8px 14px; z-index: 100; }
 .skip:focus { left: 16px; }
 
 /* Botones */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--vino); color: var(--crema);
+  background: var(--vino); color: var(--en-oscuro);
   font-weight: 500; font-size: 17px; text-decoration: none;
   padding: 14px 28px; border-radius: 999px;
   transition: background .2s ease, transform .2s ease;
@@ -160,7 +226,7 @@ p { margin: 0; }
 }
 .tabs button:hover { color: var(--vino); }
 .tabs button[aria-selected="true"] { color: var(--vino); }
-.tabs button[aria-selected="true"]::before { background: var(--mostaza); border-color: var(--mostaza); box-shadow: 0 0 0 4px rgba(214, 163, 70, .25); }
+.tabs button[aria-selected="true"]::before { background: var(--mostaza); border-color: var(--mostaza); box-shadow: 0 0 0 4px color-mix(in srgb, var(--mostaza) 25%, transparent); }
 
 .panel { min-height: 420px; }
 .panel:focus-visible { outline-offset: 12px; }
@@ -184,13 +250,13 @@ p { margin: 0; }
 
 .special {
   position: relative; display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: end;
-  background: var(--vino); color: var(--crema);
+  background: var(--vino); color: var(--en-oscuro);
   padding: 30px 34px; border-radius: 22px 22px 22px 4px; margin-bottom: 18px;
 }
-.special-tag { grid-column: 1 / -1; font-family: var(--script); font-size: 34px; line-height: 1; color: #F5C978; }
-.special h3 { color: var(--crema); font-size: clamp(28px, 3vw, 36px); grid-column: 1; }
-.special p:not(.special-tag) { grid-column: 1; color: #F3D9CC; }
-.special .price { grid-column: 2; grid-row: 2 / 4; color: var(--crema); font-size: 30px; font-family: var(--display); }
+.special-tag { grid-column: 1 / -1; font-family: var(--script); font-size: 34px; line-height: 1; color: var(--en-oscuro-brillo); }
+.special h3 { color: var(--en-oscuro); font-size: clamp(28px, 3vw, 36px); grid-column: 1; }
+.special p:not(.special-tag) { grid-column: 1; color: var(--en-oscuro-suave); }
+.special .price { grid-column: 2; grid-row: 2 / 4; color: var(--en-oscuro); font-size: 30px; font-family: var(--display); }
 
 /* Fotos profesionales en la lista del menú */
 .dishes li.con-foto { align-items: center; }
@@ -206,10 +272,10 @@ p { margin: 0; }
   border: 0; padding: 0; background: transparent; max-width: min(92vw, 460px); width: 100%;
   overflow: visible;
 }
-.foto-modal::backdrop { background: rgba(62, 20, 24, .78); backdrop-filter: blur(3px); }
+.foto-modal::backdrop { background: color-mix(in srgb, var(--ciruela) 80%, transparent); backdrop-filter: blur(3px); }
 .foto-modal img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 22px; }
 .foto-nombre {
-  margin-top: 14px; text-align: center; color: var(--crema);
+  margin-top: 14px; text-align: center; color: #FFF8EF;
   font-family: var(--display); font-variation-settings: "SOFT" 100; font-size: 24px; font-weight: 500;
 }
 .foto-cerrar {
@@ -243,9 +309,9 @@ p { margin: 0; }
 .redes a:hover { border-color: var(--vino); background: #fff; }
 .redes svg {
   grid-row: 1 / 3; width: 44px; height: 44px; padding: 10px; border-radius: 12px;
-  background: var(--vino); fill: none; stroke: var(--crema); stroke-width: 1.8; stroke-linejoin: round;
+  background: var(--vino); fill: none; stroke: var(--en-oscuro); stroke-width: 1.8; stroke-linejoin: round;
 }
-.redes svg .fill { fill: var(--crema); stroke: none; }
+.redes svg .fill { fill: var(--en-oscuro); stroke: none; }
 .redes a span { font-weight: 400; font-size: 15px; color: var(--suave); }
 
 /* La casa */
@@ -256,7 +322,7 @@ p { margin: 0; }
 .casa-list li { padding-left: 30px; position: relative; max-width: 44ch; }
 .casa-list li::before {
   content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 14px; border-radius: 50%;
-  background: var(--mostaza); box-shadow: 0 0 0 4px rgba(214, 163, 70, .22);
+  background: var(--mostaza); box-shadow: 0 0 0 4px color-mix(in srgb, var(--mostaza) 22%, transparent);
 }
 .casa-list strong { color: var(--vino); font-weight: 600; }
 
@@ -274,18 +340,18 @@ p { margin: 0; }
 .c-barra img { object-position: 50% 60%; }
 
 /* Versículo */
-.verso { position: relative; background: var(--ciruela); color: var(--crema); padding: clamp(84px, 10vw, 140px) 0; overflow-x: clip; }
+.verso { position: relative; background: var(--ciruela); color: var(--en-oscuro); padding: clamp(84px, 10vw, 140px) 0; overflow-x: clip; }
 .thread-verso { top: 18px; left: 0; width: 100%; height: clamp(60px, 9vw, 110px); opacity: .9; }
 .verso-inner { position: relative; display: grid; justify-items: center; text-align: center; }
 .verso blockquote { margin: 0; }
 .verso blockquote p {
   max-width: 19ch; margin-inline: auto;
   font-family: var(--display); font-variation-settings: "SOFT" 100, "opsz" 144;
-  font-weight: 500; font-size: clamp(34px, 4.8vw, 62px); line-height: 1.12; color: #F2C66E;
+  font-weight: 500; font-size: clamp(34px, 4.8vw, 62px); line-height: 1.12; color: var(--en-oscuro-brillo);
 }
-.script-line { display: block; font-family: var(--script); font-weight: 400; color: var(--crema); font-size: 1.25em; line-height: 1.1; margin: .08em 0 .02em; }
-.verso blockquote footer { margin-top: 26px; letter-spacing: .32em; font-size: 15px; color: #E8CFC4; }
-.verso-note { margin-top: 30px; color: #D9B9AF; max-width: 40ch; }
+.script-line { display: block; font-family: var(--script); font-weight: 400; color: var(--en-oscuro); font-size: 1.25em; line-height: 1.1; margin: .08em 0 .02em; }
+.verso blockquote footer { margin-top: 26px; letter-spacing: .32em; font-size: 15px; color: var(--en-oscuro-suave); }
+.verso-note { margin-top: 30px; color: var(--en-oscuro-suave); opacity: .85; max-width: 40ch; }
 
 /* Visita */
 .visita { padding: clamp(80px, 10vw, 130px) 0; }
@@ -305,8 +371,8 @@ p { margin: 0; }
 .datos dd { margin: 0; font-weight: 500; color: var(--tinta); }
 
 /* Sobre nosotros: como la hoja de marca, con el sol del logo de fondo */
-.sobre { position: relative; overflow: hidden; background: #FFF6E6; padding: clamp(84px, 10vw, 140px) 0; border-top: 1px solid var(--linea); }
-.sobre-sol { position: absolute; right: -6%; top: 50%; width: min(70vw, 640px); transform: translateY(-46%); stroke: #EFE2D2; pointer-events: none; }
+.sobre { position: relative; overflow: hidden; background: var(--sobre-fondo); padding: clamp(84px, 10vw, 140px) 0; border-top: 1px solid var(--linea); }
+.sobre-sol { position: absolute; right: -6%; top: 50%; width: min(70vw, 640px); transform: translateY(-46%); stroke: var(--sobre-sol); pointer-events: none; }
 .sobre-inner { position: relative; max-width: 820px; text-align: left; }
 .sobre h2 { margin-bottom: 30px; }
 .sobre-logo { width: min(300px, 70%); height: auto; margin: 0 0 34px; }
@@ -314,17 +380,17 @@ p { margin: 0; }
 .sobre p + p { margin-top: 22px; }
 
 /* Reseña en video */
-.resena { background: var(--vino); color: var(--crema); padding: clamp(80px, 10vw, 130px) 0; overflow-x: clip; }
+.resena { background: var(--vino); color: var(--en-oscuro); padding: clamp(80px, 10vw, 130px) 0; overflow-x: clip; }
 .resena-grid { display: grid; grid-template-columns: 1fr minmax(240px, 320px); gap: clamp(36px, 7vw, 96px); align-items: center; }
-.resena-copy .script { color: var(--mostaza); }
-.resena h2 { color: var(--crema); margin-bottom: 22px; }
-.resena-copy p:not(.script) { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.6; max-width: 40ch; color: #F6DCCB; }
+.resena-copy .script { color: var(--en-oscuro-brillo); }
+.resena h2 { color: var(--en-oscuro); margin-bottom: 22px; }
+.resena-copy p:not(.script) { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.6; max-width: 40ch; color: var(--en-oscuro-suave); }
 .resena-video { position: relative; border-radius: 28px; overflow: hidden; background: var(--ciruela); box-shadow: 0 0 0 1px rgba(252,238,223,.25), 0 30px 60px -24px rgba(0,0,0,.55); }
 .resena-video video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
 .resena-play {
   position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border: 0; border-radius: 50%;
   display: grid; place-items: center; cursor: pointer;
-  background: var(--crema); color: var(--vino); box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  background: var(--en-oscuro); color: var(--vino); box-shadow: 0 10px 30px rgba(0,0,0,.35);
   transition: transform .2s ease;
 }
 .resena-play:hover { transform: scale(1.06); }
@@ -333,13 +399,13 @@ p { margin: 0; }
 .resena-video.reproduciendo .resena-play { display: none; }
 
 /* Footer */
-.site-footer { background: var(--vino); color: var(--crema); padding: 56px 0 40px; }
+.site-footer { background: var(--vino); color: var(--en-oscuro); padding: 56px 0 40px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
 .footer-inner img { width: 190px; height: auto; }
 .footer-inner nav { display: flex; gap: 26px; }
-.footer-inner nav a { text-decoration: none; color: var(--crema); }
-.footer-inner nav a:hover { color: #F2C66E; }
-.footer-inner p { font-size: 15px; color: #EBC9C4; }
+.footer-inner nav a { text-decoration: none; color: var(--en-oscuro); }
+.footer-inner nav a:hover { color: var(--en-oscuro-brillo); }
+.footer-inner p { font-size: 15px; color: var(--en-oscuro-suave); }
 
 /* Responsive */
 @media (max-width: 960px) {
@@ -366,7 +432,7 @@ p { margin: 0; }
     border: 1.5px solid var(--linea); border-radius: 999px; padding: 11px 18px;
   }
   .tabs button::before { display: none; }
-  .tabs button[aria-selected="true"] { background: var(--vino); border-color: var(--vino); color: var(--crema); }
+  .tabs button[aria-selected="true"] { background: var(--vino); border-color: var(--vino); color: var(--en-oscuro); }
   .panel { min-height: 0; }
 
   .resena-grid { grid-template-columns: 1fr; }

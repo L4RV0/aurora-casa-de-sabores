@@ -5,7 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aurora · Casa de Sabores</title>
   <meta name="description" content="Aurora, Casa de Sabores: Cocina con alma y tradición en El Carmen, Manabí. Menú, café, cócteles y postres. Av. Chone, km 30. Reserva por WhatsApp.">
-  <meta name="theme-color" content="#7A1C24">
+  <meta name="theme-color" content="#761821">
+  <!-- Combinación de colores de la marca (sección 3.0): se elige una en cada visita,
+       sin repetir la anterior, antes de que se dibuje la página para que no parpadee.
+       Para ver una en particular: ?tema=vino | rosa | madera | oliva -->
+  <script>
+    (function () {
+      var temas = { vino: '#761821', rosa: '#FBDCDA', madera: '#844B28', oliva: '#5F623D' };
+      var nombres = Object.keys(temas), anterior = null, clave = 'aurora-tema';
+      try { anterior = localStorage.getItem(clave); } catch (e) {}
+      var pedido = new URLSearchParams(location.search).get('tema');
+      var opciones = nombres.filter(function (t) { return t !== anterior; });
+      var tema = temas[pedido] ? pedido : opciones[Math.floor(Math.random() * opciones.length)];
+      document.documentElement.setAttribute('data-tema', tema);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', temas[tema]);
+      try { localStorage.setItem(clave, tema); } catch (e) {}
+    })();
+  </script>
   <link rel="canonical" href="https://auroracasadesabores.com/">
   <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, Instagram, Telegram) -->
   <meta property="og:type" content="website">
@@ -34,7 +50,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#inicio" class="brand" aria-label="Aurora, Casa de Sabores, inicio">
-        <img src="assets/wordmark-vino.png" alt="Aurora" width="160" height="56">
+        <img class="logo-tinta logo-wordmark" src="assets/wordmark-vino.png" alt="Aurora" width="160" height="56">
       </a>
       <nav id="menu" class="nav" aria-label="Principal">
         <a href="#carta">Menú</a>
@@ -57,7 +73,7 @@
       </svg>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <img class="hero-logo" src="assets/logo-horizontal-vino.png" alt="Aurora, Casa de Sabores" width="1400" height="320" fetchpriority="high">
+          <img class="hero-logo logo-tinta logo-horizontal" src="assets/logo-horizontal-vino.png" alt="Aurora, Casa de Sabores" width="1400" height="320" fetchpriority="high">
           <p class="script">¡Hoy es un buen día para celebrar!</p>
           <h1>Sabores de la costa, café de la casa y una mesa para quedarse.</h1>
           <p class="lead">Cocina con alma y tradición</p>
@@ -290,7 +306,7 @@
       </svg>
       <div class="wrap sobre-inner">
         <h2 id="sobre-title">Sobre nosotros</h2>
-        <img class="sobre-logo" src="assets/logo-vino.png" alt="Aurora, Casa de Sabores" width="1601" height="655" loading="lazy">
+        <img class="sobre-logo logo-tinta logo-principal" src="assets/logo-vino.png" alt="Aurora, Casa de Sabores" width="1601" height="655" loading="lazy">
         <p>Aurora Casa de Sabores nace como una marca gastronómica inspirada en el despertar de los sabores: una experiencia cálida, elegante y fresca, donde distintas influencias culinarias se encuentran en una propuesta moderna, cuidada y memorable.</p>
         <p>La palabra Aurora se conecta con la idea del inicio, la luz suave del amanecer y el renacer de nuevas experiencias. Más que representar una hora del día, Aurora simboliza ese momento especial en el que cada sabor cobra vida, la tradición se transforma y la gastronomía se ilumina con creatividad, identidad y una visión contemporánea.</p>
       </div>
@@ -299,7 +315,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <img src="assets/logo-crema.png" alt="Aurora, Casa de Sabores" width="220" height="90" loading="lazy">
+      <img class="logo-tinta logo-principal en-oscuro" src="assets/logo-crema.png" alt="Aurora, Casa de Sabores" width="220" height="90" loading="lazy">
       <nav aria-label="Pie de página">
         <a href="#carta">Menú</a>
         <a href="#casa">La casa</a>
