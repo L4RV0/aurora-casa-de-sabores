@@ -6,3 +6,5 @@
 node_modules
 amplify.yml
 wrangler.jsonc
+worker
+.impeccable

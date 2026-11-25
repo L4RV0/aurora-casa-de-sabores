@@ -8,7 +8,11 @@
 		{ "pattern": "auroracasadesabores.com", "custom_domain": true },
 		{ "pattern": "www.auroracasadesabores.com", "custom_domain": true }
 	],
+	// Los videos pasan por worker/video.js para poder entregarse por partes (iPhone lo necesita)
+	"main": "worker/video.js",
 	"assets": {
-		"directory": "./"
+		"directory": "./",
+		"binding": "ASSETS",
+		"run_worker_first": ["/assets/video/*.mp4"]
 	}
 }

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-25T21:12:55.280Z",
+        "reason": "Claude: foto-modal img src is filled by js/main.js when a dish photo is opened; dialog is hidden until then"
+      }
+    ]
+  }
+}
