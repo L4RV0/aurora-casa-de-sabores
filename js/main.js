@@ -68,3 +68,13 @@ if (modal && typeof modal.showModal === 'function') {
   // Cerrar al tocar fuera de la foto
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
 }
+
+// Logo del encabezado: oculto mientras se ve el logo grande del inicio
+const heroLogo = document.querySelector('.hero-logo');
+if (heroLogo && 'IntersectionObserver' in window) {
+  if (window.scrollY < 100) header.classList.add('sin-logo'); // evita que el logo parpadee al cargar
+  new IntersectionObserver(
+    ([entry]) => header.classList.toggle('sin-logo', entry.isIntersecting),
+    { rootMargin: '-76px 0px 0px 0px' }
+  ).observe(heroLogo);
+}
